@@ -1,0 +1,32 @@
+
+# Python environments
+g13_env/
+.venv/
+__pycache__/
+*.py[cod]
+
+# All experiment output folders and backups
+results/
+results*/
+results_*/
+DEBUG_BACKUP/
+DEBUG_FIXED_BACKUP/
+*.bak
+
+# Dataset files
+iccad-official/
+ICCAD12_Dataset/
+
+# Model artifacts
+*.h5
+*.keras
+*.ckpt
+*.weights.h5
+*.onnx
+
+# Secrets and logs
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
