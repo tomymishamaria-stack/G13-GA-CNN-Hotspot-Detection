@@ -1,0 +1,764 @@
+2026-10-27 13:19:23 | INFO    | Python 3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)] | TensorFlow 2.15.0 | Platform Windows-10-10.0.26300-SP0
+2026-10-27 13:19:23 | INFO    | Mode = FULL | Config = {'data_root': 'C:\\Users\\misha\\OneDrive\\Desktop\\ICCAD12_Dataset\\iccad-official', 'output_dir': 'results_full_oct27_seed11', 'seed': 11, 'image_size': (64, 64), 'grayscale': True, 'val_ratio': 0.2, 'baseline_epochs': 20, 'baseline_batch_size': 32, 'baseline_lr': 0.002, 'early_stopping_patience': 5, 'mode': 'full', 'population_size': 20, 'generations': 10, 'search_epochs': 5, 'crossover_prob': 0.7, 'mutation_prob': 0.3, 'ga_batch_size': 32, 'final_epochs': 20, 'n_objectives': 2, 'max_images_per_class': None, 'inference_timing_repeats': 100, 'overwrite': False}
+2026-10-27 13:19:23 | INFO    | ===== Starting benchmark ICCAD1 =====
+2026-10-27 13:19:24 | WARNING | [iccad1] RESOLUTION CHECK: native images are ~(1200, 1200), configured target is (64, 64) -> downsampling by ~18.8x per axis (~352x fewer pixels). The configured target (64, 64) is being kept as-is (not silently changed).
+2026-10-27 13:19:24 | INFO    | [iccad1] Detected image properties: {'n_inspected': 50, 'unique_sizes': [(1200, 1200)], 'most_common_size': (1200, 1200), 'most_common_mode': 'L', 'pixel_min': 0, 'pixel_max': 255}
+2026-10-27 13:19:32 | INFO    | [iccad1] Class distribution: {'benchmark': 'iccad1', 'train_hs': 99, 'train_nhs': 340, 'test_hs': 226, 'test_nhs': 4679, 'train_total': 439, 'test_total': 4905, 'hs_pct_train': 22.551, 'nhs_pct_train': 77.449, 'imbalance_ratio_nhs_per_hs': 3.434}
+2026-10-27 13:22:11 | INFO    | [iccad1] LOADED SAMPLES: train=351 (HS=79, NHS=272); validation=88 (HS=20, NHS=68); test=4905 (HS=226, NHS=4679). max_images_per_class=None.
+2026-10-27 13:22:11 | INFO    | [iccad1] Training baseline lightweight CNN ...
+2026-10-27 13:24:08 | INFO    | [iccad1] Baseline TEST BalAcc=0.8592 params=6817 trained=True
+2026-10-27 13:24:08 | INFO    | [iccad1] Training independent hand-designed separable CNN comparator ...
+2026-10-27 13:25:18 | INFO    | [iccad1] Hand-designed CNN TEST BalAcc=0.5002 params=218
+2026-10-27 13:25:18 | INFO    | [iccad1] Running NSGA-II GA search (pop=20, gens=10, search_epochs=5) ...
+2026-10-27 13:31:36 | INFO    |   [iccad1] gen1 cand21: duplicate chromosome -> using cached fitness
+2026-10-27 13:31:36 | INFO    |   [iccad1] gen1 cand22: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:03 | INFO    |   [iccad1] gen1 cand25: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:03 | INFO    |   [iccad1] gen1 cand26: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:03 | INFO    |   [iccad1] gen1 cand27: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:03 | INFO    |   [iccad1] gen1 cand28: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:34 | INFO    |   [iccad1] gen1 cand31: duplicate chromosome -> using cached fitness
+2026-10-27 13:32:34 | INFO    |   [iccad1] gen1 cand32: duplicate chromosome -> using cached fitness
+2026-10-27 13:34:03 | INFO    |   [iccad1] gen1 cand37: duplicate chromosome -> using cached fitness
+2026-10-27 13:34:03 | INFO    |   [iccad1] gen1 cand38: duplicate chromosome -> using cached fitness
+2026-10-27 13:34:38 | INFO    |   [iccad1] Generation 1/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:34:38 | INFO    |   [iccad1] gen2 cand41: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand45: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand46: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand47: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand48: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand49: duplicate chromosome -> using cached fitness
+2026-10-27 13:35:15 | INFO    |   [iccad1] gen2 cand50: duplicate chromosome -> using cached fitness
+2026-10-27 13:36:27 | INFO    |   [iccad1] gen2 cand55: duplicate chromosome -> using cached fitness
+2026-10-27 13:36:27 | INFO    |   [iccad1] gen2 cand56: duplicate chromosome -> using cached fitness
+2026-10-27 13:36:54 | INFO    |   [iccad1] gen2 cand59: duplicate chromosome -> using cached fitness
+2026-10-27 13:36:54 | INFO    |   [iccad1] gen2 cand60: duplicate chromosome -> using cached fitness
+2026-10-27 13:36:54 | INFO    |   [iccad1] Generation 2/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:37:09 | INFO    |   [iccad1] gen3 cand62: duplicate chromosome -> using cached fitness
+2026-10-27 13:37:24 | INFO    |   [iccad1] gen3 cand64: duplicate chromosome -> using cached fitness
+2026-10-27 13:37:51 | INFO    |   [iccad1] gen3 cand67: duplicate chromosome -> using cached fitness
+2026-10-27 13:37:51 | INFO    |   [iccad1] gen3 cand68: duplicate chromosome -> using cached fitness
+2026-10-27 13:38:46 | INFO    |   [iccad1] gen3 cand73: duplicate chromosome -> using cached fitness
+2026-10-27 13:38:46 | INFO    |   [iccad1] gen3 cand74: duplicate chromosome -> using cached fitness
+2026-10-27 13:40:11 | INFO    |   [iccad1] Generation 3/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:40:35 | INFO    |   [iccad1] gen4 cand83: duplicate chromosome -> using cached fitness
+2026-10-27 13:40:35 | INFO    |   [iccad1] gen4 cand84: duplicate chromosome -> using cached fitness
+2026-10-27 13:40:35 | INFO    |   [iccad1] gen4 cand85: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:36 | INFO    |   [iccad1] gen4 cand95: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:48 | INFO    |   [iccad1] gen4 cand97: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:48 | INFO    |   [iccad1] gen4 cand98: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:48 | INFO    |   [iccad1] gen4 cand99: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:48 | INFO    |   [iccad1] gen4 cand100: duplicate chromosome -> using cached fitness
+2026-10-27 13:42:48 | INFO    |   [iccad1] Generation 4/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:43:13 | INFO    |   [iccad1] gen5 cand103: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:13 | INFO    |   [iccad1] gen5 cand104: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:13 | INFO    |   [iccad1] gen5 cand105: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:13 | INFO    |   [iccad1] gen5 cand106: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:42 | INFO    |   [iccad1] gen5 cand109: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:57 | INFO    |   [iccad1] gen5 cand111: duplicate chromosome -> using cached fitness
+2026-10-27 13:43:57 | INFO    |   [iccad1] gen5 cand112: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:25 | INFO    |   [iccad1] gen5 cand115: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:25 | INFO    |   [iccad1] gen5 cand116: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:25 | INFO    |   [iccad1] gen5 cand117: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:25 | INFO    |   [iccad1] gen5 cand118: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:48 | INFO    |   [iccad1] Generation 5/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:44:48 | INFO    |   [iccad1] gen6 cand121: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:48 | INFO    |   [iccad1] gen6 cand122: duplicate chromosome -> using cached fitness
+2026-10-27 13:44:48 | INFO    |   [iccad1] gen6 cand123: duplicate chromosome -> using cached fitness
+2026-10-27 13:45:33 | INFO    |   [iccad1] gen6 cand127: duplicate chromosome -> using cached fitness
+2026-10-27 13:45:33 | INFO    |   [iccad1] gen6 cand128: duplicate chromosome -> using cached fitness
+2026-10-27 13:45:33 | INFO    |   [iccad1] gen6 cand129: duplicate chromosome -> using cached fitness
+2026-10-27 13:45:33 | INFO    |   [iccad1] gen6 cand130: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand133: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand134: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand135: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand136: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand137: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:02 | INFO    |   [iccad1] gen6 cand138: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:32 | INFO    |   [iccad1] Generation 6/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:46:32 | INFO    |   [iccad1] gen7 cand141: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:32 | INFO    |   [iccad1] gen7 cand142: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand144: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand145: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand146: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand147: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand148: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand149: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand150: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand151: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand152: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand153: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand154: duplicate chromosome -> using cached fitness
+2026-10-27 13:46:43 | INFO    |   [iccad1] gen7 cand155: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:07 | INFO    |   [iccad1] Generation 7/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:48:19 | INFO    |   [iccad1] gen8 cand162: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:19 | INFO    |   [iccad1] gen8 cand163: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:19 | INFO    |   [iccad1] gen8 cand164: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:19 | INFO    |   [iccad1] gen8 cand165: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:19 | INFO    |   [iccad1] gen8 cand166: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:42 | INFO    |   [iccad1] gen8 cand169: duplicate chromosome -> using cached fitness
+2026-10-27 13:48:42 | INFO    |   [iccad1] gen8 cand170: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen8 cand179: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen8 cand180: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] Generation 8/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand181: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand182: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand183: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand184: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand185: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:17 | INFO    |   [iccad1] gen9 cand186: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:34 | INFO    |   [iccad1] gen9 cand189: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:34 | INFO    |   [iccad1] gen9 cand190: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:34 | INFO    |   [iccad1] gen9 cand191: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:34 | INFO    |   [iccad1] gen9 cand192: duplicate chromosome -> using cached fitness
+2026-10-27 13:50:45 | INFO    |   [iccad1] gen9 cand194: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:00 | INFO    |   [iccad1] gen9 cand197: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:00 | INFO    |   [iccad1] gen9 cand198: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] Generation 9/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand201: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand202: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand203: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand204: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand205: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand206: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand207: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:17 | INFO    |   [iccad1] gen10 cand208: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:31 | INFO    |   [iccad1] gen10 cand211: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:31 | INFO    |   [iccad1] gen10 cand212: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:31 | INFO    |   [iccad1] gen10 cand213: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:31 | INFO    |   [iccad1] gen10 cand214: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:48 | INFO    |   [iccad1] gen10 cand217: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:48 | INFO    |   [iccad1] gen10 cand218: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:48 | INFO    |   [iccad1] gen10 cand219: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:48 | INFO    |   [iccad1] gen10 cand220: duplicate chromosome -> using cached fitness
+2026-10-27 13:51:48 | INFO    |   [iccad1] Generation 10/10 complete. Best val BalAcc so far = 1.0000
+2026-10-27 13:51:49 | INFO    | [iccad1] Pareto front size = 1 / 109 valid candidates
+2026-10-27 13:51:49 | INFO    | [iccad1] Normalized Pareto hypervolume = 0.000000 (reference=[0.0, 0.0])
+2026-10-27 13:51:49 | INFO    | [iccad1] Retraining selected GA architecture: Chromosome(depth=2, filters=8, kernel=3, dense_units=8, dropout=0.27621244666266276, learning_rate=0.008438630370452468)
+2026-10-27 13:53:05 | INFO    | [iccad1] GA-optimized TEST BalAcc=0.8851 params=3625 trained=True
+2026-10-27 13:53:05 | INFO    | [iccad1] Running ablation: highest-validation-Balanced-Accuracy candidate from the NSGA-II pool ...
+2026-10-27 13:53:39 | INFO    | ===== Starting benchmark ICCAD2 =====
+2026-10-27 13:53:49 | WARNING | [iccad2] RESOLUTION CHECK: native images are ~(1200, 1200), configured target is (64, 64) -> downsampling by ~18.8x per axis (~352x fewer pixels). The configured target (64, 64) is being kept as-is (not silently changed).
+2026-10-27 13:53:49 | INFO    | [iccad2] Detected image properties: {'n_inspected': 50, 'unique_sizes': [(1200, 1200)], 'most_common_size': (1200, 1200), 'most_common_mode': 'L', 'pixel_min': 0, 'pixel_max': 255}
+2026-10-27 13:54:55 | INFO    | [iccad2] Class distribution: {'benchmark': 'iccad2', 'train_hs': 174, 'train_nhs': 5285, 'test_hs': 498, 'test_nhs': 41298, 'train_total': 5459, 'test_total': 41796, 'hs_pct_train': 3.187, 'nhs_pct_train': 96.813, 'imbalance_ratio_nhs_per_hs': 30.374}
+2026-10-27 14:21:08 | INFO    | [iccad2] LOADED SAMPLES: train=4367 (HS=139, NHS=4228); validation=1092 (HS=35, NHS=1057); test=41796 (HS=498, NHS=41298). max_images_per_class=None.
+2026-10-27 14:21:08 | INFO    | [iccad2] Training baseline lightweight CNN ...
+2026-10-27 14:26:09 | INFO    | [iccad2] Baseline TEST BalAcc=0.9266 params=6817 trained=True
+2026-10-27 14:26:09 | INFO    | [iccad2] Training independent hand-designed separable CNN comparator ...
+2026-10-27 14:28:21 | INFO    | [iccad2] Hand-designed CNN TEST BalAcc=0.6870 params=218
+2026-10-27 14:28:21 | INFO    | [iccad2] Running NSGA-II GA search (pop=20, gens=10, search_epochs=5) ...
+2026-10-27 15:03:14 | INFO    |   [iccad2] gen1 cand22: duplicate chromosome -> using cached fitness
+2026-10-27 15:03:14 | INFO    |   [iccad2] gen1 cand23: duplicate chromosome -> using cached fitness
+2026-10-27 15:12:33 | INFO    |   [iccad2] gen1 cand33: duplicate chromosome -> using cached fitness
+2026-10-27 15:12:33 | INFO    |   [iccad2] gen1 cand34: duplicate chromosome -> using cached fitness
+2026-10-27 15:12:33 | INFO    |   [iccad2] gen1 cand35: duplicate chromosome -> using cached fitness
+2026-10-27 15:12:33 | INFO    |   [iccad2] gen1 cand36: duplicate chromosome -> using cached fitness
+2026-10-27 15:15:14 | INFO    |   [iccad2] gen1 cand39: duplicate chromosome -> using cached fitness
+2026-10-27 15:15:14 | INFO    |   [iccad2] gen1 cand40: duplicate chromosome -> using cached fitness
+2026-10-27 15:15:14 | INFO    |   [iccad2] Generation 1/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:20:22 | INFO    |   [iccad2] gen2 cand47: duplicate chromosome -> using cached fitness
+2026-10-27 15:27:46 | INFO    |   [iccad2] gen2 cand57: duplicate chromosome -> using cached fitness
+2026-10-27 15:27:46 | INFO    |   [iccad2] gen2 cand58: duplicate chromosome -> using cached fitness
+2026-10-27 15:29:23 | INFO    |   [iccad2] Generation 2/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:29:23 | INFO    |   [iccad2] gen3 cand61: duplicate chromosome -> using cached fitness
+2026-10-27 15:29:23 | INFO    |   [iccad2] gen3 cand62: duplicate chromosome -> using cached fitness
+2026-10-27 15:29:23 | INFO    |   [iccad2] gen3 cand63: duplicate chromosome -> using cached fitness
+2026-10-27 15:29:23 | INFO    |   [iccad2] gen3 cand64: duplicate chromosome -> using cached fitness
+2026-10-27 15:30:37 | INFO    |   [iccad2] gen3 cand67: duplicate chromosome -> using cached fitness
+2026-10-27 15:30:37 | INFO    |   [iccad2] gen3 cand68: duplicate chromosome -> using cached fitness
+2026-10-27 15:30:37 | INFO    |   [iccad2] gen3 cand69: duplicate chromosome -> using cached fitness
+2026-10-27 15:30:37 | INFO    |   [iccad2] gen3 cand70: duplicate chromosome -> using cached fitness
+2026-10-27 15:33:27 | INFO    |   [iccad2] gen3 cand75: duplicate chromosome -> using cached fitness
+2026-10-27 15:37:25 | INFO    |   [iccad2] Generation 3/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:37:25 | INFO    |   [iccad2] gen4 cand81: duplicate chromosome -> using cached fitness
+2026-10-27 15:37:25 | INFO    |   [iccad2] gen4 cand82: duplicate chromosome -> using cached fitness
+2026-10-27 15:37:25 | INFO    |   [iccad2] gen4 cand83: duplicate chromosome -> using cached fitness
+2026-10-27 15:37:25 | INFO    |   [iccad2] gen4 cand84: duplicate chromosome -> using cached fitness
+2026-10-27 15:38:00 | INFO    |   [iccad2] gen4 cand86: duplicate chromosome -> using cached fitness
+2026-10-27 15:38:33 | INFO    |   [iccad2] gen4 cand88: duplicate chromosome -> using cached fitness
+2026-10-27 15:40:57 | INFO    |   [iccad2] gen4 cand93: duplicate chromosome -> using cached fitness
+2026-10-27 15:40:57 | INFO    |   [iccad2] gen4 cand94: duplicate chromosome -> using cached fitness
+2026-10-27 15:45:16 | INFO    |   [iccad2] Generation 4/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:45:16 | INFO    |   [iccad2] gen5 cand101: duplicate chromosome -> using cached fitness
+2026-10-27 15:45:16 | INFO    |   [iccad2] gen5 cand102: duplicate chromosome -> using cached fitness
+2026-10-27 15:45:16 | INFO    |   [iccad2] gen5 cand103: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand106: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand107: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand108: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand109: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand110: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand111: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand112: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand113: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand114: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand115: duplicate chromosome -> using cached fitness
+2026-10-27 15:47:22 | INFO    |   [iccad2] gen5 cand116: duplicate chromosome -> using cached fitness
+2026-10-27 15:48:57 | INFO    |   [iccad2] gen5 cand119: duplicate chromosome -> using cached fitness
+2026-10-27 15:48:57 | INFO    |   [iccad2] gen5 cand120: duplicate chromosome -> using cached fitness
+2026-10-27 15:48:57 | INFO    |   [iccad2] Generation 5/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand122: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand123: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand124: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand125: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand126: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand127: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand128: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand129: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand130: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand131: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand132: duplicate chromosome -> using cached fitness
+2026-10-27 15:49:42 | INFO    |   [iccad2] gen6 cand133: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand135: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand136: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand137: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand138: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand139: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen6 cand140: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] Generation 6/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen7 cand141: duplicate chromosome -> using cached fitness
+2026-10-27 15:50:50 | INFO    |   [iccad2] gen7 cand142: duplicate chromosome -> using cached fitness
+2026-10-27 15:53:30 | INFO    |   [iccad2] gen7 cand147: duplicate chromosome -> using cached fitness
+2026-10-27 15:53:30 | INFO    |   [iccad2] gen7 cand148: duplicate chromosome -> using cached fitness
+2026-10-27 15:53:30 | INFO    |   [iccad2] gen7 cand149: duplicate chromosome -> using cached fitness
+2026-10-27 15:53:30 | INFO    |   [iccad2] gen7 cand150: duplicate chromosome -> using cached fitness
+2026-10-27 15:53:30 | INFO    |   [iccad2] gen7 cand151: duplicate chromosome -> using cached fitness
+2026-10-27 15:54:37 | INFO    |   [iccad2] gen7 cand153: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen7 cand157: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen7 cand158: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen7 cand159: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen7 cand160: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] Generation 7/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen8 cand161: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen8 cand162: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen8 cand163: duplicate chromosome -> using cached fitness
+2026-10-27 15:57:25 | INFO    |   [iccad2] gen8 cand164: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand169: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand170: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand171: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand172: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand173: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand174: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand175: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand176: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand177: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand178: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand179: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen8 cand180: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:17 | INFO    |   [iccad2] Generation 8/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 16:00:17 | INFO    |   [iccad2] gen9 cand181: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:40 | INFO    |   [iccad2] gen9 cand183: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:40 | INFO    |   [iccad2] gen9 cand184: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:40 | INFO    |   [iccad2] gen9 cand185: duplicate chromosome -> using cached fitness
+2026-10-27 16:00:40 | INFO    |   [iccad2] gen9 cand186: duplicate chromosome -> using cached fitness
+2026-10-27 16:03:53 | INFO    |   [iccad2] gen9 cand191: duplicate chromosome -> using cached fitness
+2026-10-27 16:03:53 | INFO    |   [iccad2] gen9 cand192: duplicate chromosome -> using cached fitness
+2026-10-27 16:03:53 | INFO    |   [iccad2] gen9 cand193: duplicate chromosome -> using cached fitness
+2026-10-27 16:03:53 | INFO    |   [iccad2] gen9 cand194: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen9 cand196: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen9 cand197: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen9 cand198: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen9 cand199: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen9 cand200: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] Generation 9/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen10 cand201: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen10 cand202: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen10 cand203: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:00 | INFO    |   [iccad2] gen10 cand204: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:26 | INFO    |   [iccad2] gen10 cand206: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:26 | INFO    |   [iccad2] gen10 cand207: duplicate chromosome -> using cached fitness
+2026-10-27 16:05:26 | INFO    |   [iccad2] gen10 cand208: duplicate chromosome -> using cached fitness
+2026-10-27 16:06:18 | INFO    |   [iccad2] gen10 cand211: duplicate chromosome -> using cached fitness
+2026-10-27 16:06:18 | INFO    |   [iccad2] gen10 cand212: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] gen10 cand216: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] gen10 cand217: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] gen10 cand218: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] gen10 cand219: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] gen10 cand220: duplicate chromosome -> using cached fitness
+2026-10-27 16:08:13 | INFO    |   [iccad2] Generation 10/10 complete. Best val BalAcc so far = 0.9976
+2026-10-27 16:08:14 | INFO    | [iccad2] Pareto front size = 2 / 102 valid candidates
+2026-10-27 16:08:14 | INFO    | [iccad2] Normalized Pareto hypervolume = 0.012299 (reference=[0.0, 0.0])
+2026-10-27 16:08:14 | INFO    | [iccad2] Retraining selected GA architecture: Chromosome(depth=3, filters=8, kernel=3, dense_units=8, dropout=0.4632286209393549, learning_rate=0.0009783292162164415)
+2026-10-27 16:10:07 | INFO    | [iccad2] GA-optimized TEST BalAcc=0.8826 params=4881 trained=True
+2026-10-27 16:10:07 | INFO    | [iccad2] Running ablation: highest-validation-Balanced-Accuracy candidate from the NSGA-II pool ...
+2026-10-27 16:12:05 | INFO    | ===== Starting benchmark ICCAD3 =====
+2026-10-27 16:12:09 | WARNING | [iccad3] RESOLUTION CHECK: native images are ~(1200, 1200), configured target is (64, 64) -> downsampling by ~18.8x per axis (~352x fewer pixels). The configured target (64, 64) is being kept as-is (not silently changed).
+2026-10-27 16:12:09 | INFO    | [iccad3] Detected image properties: {'n_inspected': 50, 'unique_sizes': [(1200, 1200)], 'most_common_size': (1200, 1200), 'most_common_mode': 'L', 'pixel_min': 0, 'pixel_max': 255}
+2026-10-27 16:12:33 | INFO    | [iccad3] Class distribution: {'benchmark': 'iccad3', 'train_hs': 909, 'train_nhs': 4643, 'test_hs': 1808, 'test_nhs': 46333, 'train_total': 5552, 'test_total': 48141, 'hs_pct_train': 16.372, 'nhs_pct_train': 83.628, 'imbalance_ratio_nhs_per_hs': 5.108}
+2026-10-27 16:31:56 | INFO    | [iccad3] LOADED SAMPLES: train=4441 (HS=727, NHS=3714); validation=1111 (HS=182, NHS=929); test=48141 (HS=1808, NHS=46333). max_images_per_class=None.
+2026-10-27 16:31:56 | INFO    | [iccad3] Training baseline lightweight CNN ...
+2026-10-27 16:36:07 | INFO    | [iccad3] Baseline TEST BalAcc=0.9669 params=6817 trained=True
+2026-10-27 16:36:07 | INFO    | [iccad3] Training independent hand-designed separable CNN comparator ...
+2026-10-27 16:38:00 | INFO    | [iccad3] Hand-designed CNN TEST BalAcc=0.8243 params=218
+2026-10-27 16:38:00 | INFO    | [iccad3] Running NSGA-II GA search (pop=20, gens=10, search_epochs=5) ...
+2026-10-27 17:10:07 | INFO    |   [iccad3] gen1 cand23: duplicate chromosome -> using cached fitness
+2026-10-27 17:10:07 | INFO    |   [iccad3] gen1 cand24: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand27: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand28: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand29: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand30: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand31: duplicate chromosome -> using cached fitness
+2026-10-27 17:11:54 | INFO    |   [iccad3] gen1 cand32: duplicate chromosome -> using cached fitness
+2026-10-27 17:16:30 | INFO    |   [iccad3] gen1 cand35: duplicate chromosome -> using cached fitness
+2026-10-27 17:16:30 | INFO    |   [iccad3] gen1 cand36: duplicate chromosome -> using cached fitness
+2026-10-27 17:17:45 | INFO    |   [iccad3] gen1 cand38: duplicate chromosome -> using cached fitness
+2026-10-27 17:17:45 | INFO    |   [iccad3] gen1 cand39: duplicate chromosome -> using cached fitness
+2026-10-27 17:17:45 | INFO    |   [iccad3] gen1 cand40: duplicate chromosome -> using cached fitness
+2026-10-27 17:17:45 | INFO    |   [iccad3] Generation 1/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:19:07 | INFO    |   [iccad3] gen2 cand43: duplicate chromosome -> using cached fitness
+2026-10-27 17:19:07 | INFO    |   [iccad3] gen2 cand44: duplicate chromosome -> using cached fitness
+2026-10-27 17:19:07 | INFO    |   [iccad3] gen2 cand45: duplicate chromosome -> using cached fitness
+2026-10-27 17:19:07 | INFO    |   [iccad3] gen2 cand46: duplicate chromosome -> using cached fitness
+2026-10-27 17:26:24 | INFO    |   [iccad3] gen2 cand53: duplicate chromosome -> using cached fitness
+2026-10-27 17:26:24 | INFO    |   [iccad3] gen2 cand54: duplicate chromosome -> using cached fitness
+2026-10-27 17:28:35 | INFO    |   [iccad3] gen2 cand57: duplicate chromosome -> using cached fitness
+2026-10-27 17:28:35 | INFO    |   [iccad3] gen2 cand58: duplicate chromosome -> using cached fitness
+2026-10-27 17:28:35 | INFO    |   [iccad3] gen2 cand59: duplicate chromosome -> using cached fitness
+2026-10-27 17:28:35 | INFO    |   [iccad3] gen2 cand60: duplicate chromosome -> using cached fitness
+2026-10-27 17:28:35 | INFO    |   [iccad3] Generation 2/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:29:57 | INFO    |   [iccad3] gen3 cand63: duplicate chromosome -> using cached fitness
+2026-10-27 17:29:57 | INFO    |   [iccad3] gen3 cand64: duplicate chromosome -> using cached fitness
+2026-10-27 17:29:57 | INFO    |   [iccad3] gen3 cand65: duplicate chromosome -> using cached fitness
+2026-10-27 17:32:15 | INFO    |   [iccad3] gen3 cand68: duplicate chromosome -> using cached fitness
+2026-10-27 17:32:53 | INFO    |   [iccad3] gen3 cand70: duplicate chromosome -> using cached fitness
+2026-10-27 17:32:53 | INFO    |   [iccad3] gen3 cand71: duplicate chromosome -> using cached fitness
+2026-10-27 17:32:53 | INFO    |   [iccad3] gen3 cand72: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand75: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand76: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand77: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand78: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand79: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] gen3 cand80: duplicate chromosome -> using cached fitness
+2026-10-27 17:37:10 | INFO    |   [iccad3] Generation 3/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:38:55 | INFO    |   [iccad3] gen4 cand83: duplicate chromosome -> using cached fitness
+2026-10-27 17:38:55 | INFO    |   [iccad3] gen4 cand84: duplicate chromosome -> using cached fitness
+2026-10-27 17:38:55 | INFO    |   [iccad3] gen4 cand85: duplicate chromosome -> using cached fitness
+2026-10-27 17:39:34 | INFO    |   [iccad3] gen4 cand87: duplicate chromosome -> using cached fitness
+2026-10-27 17:39:34 | INFO    |   [iccad3] gen4 cand88: duplicate chromosome -> using cached fitness
+2026-10-27 17:41:53 | INFO    |   [iccad3] gen4 cand91: duplicate chromosome -> using cached fitness
+2026-10-27 17:41:53 | INFO    |   [iccad3] gen4 cand92: duplicate chromosome -> using cached fitness
+2026-10-27 17:41:53 | INFO    |   [iccad3] gen4 cand93: duplicate chromosome -> using cached fitness
+2026-10-27 17:41:53 | INFO    |   [iccad3] gen4 cand94: duplicate chromosome -> using cached fitness
+2026-10-27 17:44:55 | INFO    |   [iccad3] gen4 cand97: duplicate chromosome -> using cached fitness
+2026-10-27 17:44:55 | INFO    |   [iccad3] gen4 cand98: duplicate chromosome -> using cached fitness
+2026-10-27 17:46:31 | INFO    |   [iccad3] Generation 4/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand103: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand104: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand105: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand106: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand107: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand108: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand109: duplicate chromosome -> using cached fitness
+2026-10-27 17:47:54 | INFO    |   [iccad3] gen5 cand110: duplicate chromosome -> using cached fitness
+2026-10-27 17:50:15 | INFO    |   [iccad3] gen5 cand113: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen5 cand119: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen5 cand120: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] Generation 5/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen6 cand121: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen6 cand122: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen6 cand123: duplicate chromosome -> using cached fitness
+2026-10-27 17:55:52 | INFO    |   [iccad3] gen6 cand124: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand126: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand127: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand128: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand129: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand130: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand131: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand132: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand133: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand134: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand135: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand136: duplicate chromosome -> using cached fitness
+2026-10-27 17:56:57 | INFO    |   [iccad3] gen6 cand137: duplicate chromosome -> using cached fitness
+2026-10-27 17:59:56 | INFO    |   [iccad3] Generation 6/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 17:59:56 | INFO    |   [iccad3] gen7 cand141: duplicate chromosome -> using cached fitness
+2026-10-27 17:59:56 | INFO    |   [iccad3] gen7 cand142: duplicate chromosome -> using cached fitness
+2026-10-27 18:01:49 | INFO    |   [iccad3] gen7 cand144: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:11 | INFO    |   [iccad3] gen7 cand147: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:11 | INFO    |   [iccad3] gen7 cand148: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand150: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand151: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand152: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand153: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand154: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand155: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand156: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand157: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand158: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand159: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen7 cand160: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] Generation 7/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen8 cand161: duplicate chromosome -> using cached fitness
+2026-10-27 18:04:56 | INFO    |   [iccad3] gen8 cand162: duplicate chromosome -> using cached fitness
+2026-10-27 18:06:18 | INFO    |   [iccad3] gen8 cand164: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand167: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand168: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand169: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand170: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand171: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand172: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:06 | INFO    |   [iccad3] gen8 cand173: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand175: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand176: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand177: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand178: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand179: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen8 cand180: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] Generation 8/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen9 cand181: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen9 cand182: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen9 cand183: duplicate chromosome -> using cached fitness
+2026-10-27 18:08:44 | INFO    |   [iccad3] gen9 cand184: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand186: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand187: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand188: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand189: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand190: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand191: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand192: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand193: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand194: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand195: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand196: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand197: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand198: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand199: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen9 cand200: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] Generation 9/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand201: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand202: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand203: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand204: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand205: duplicate chromosome -> using cached fitness
+2026-10-27 18:09:43 | INFO    |   [iccad3] gen10 cand206: duplicate chromosome -> using cached fitness
+2026-10-27 18:10:53 | INFO    |   [iccad3] gen10 cand209: duplicate chromosome -> using cached fitness
+2026-10-27 18:10:53 | INFO    |   [iccad3] gen10 cand210: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand212: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand213: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand214: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand215: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand216: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand217: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand218: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand219: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] gen10 cand220: duplicate chromosome -> using cached fitness
+2026-10-27 18:11:28 | INFO    |   [iccad3] Generation 10/10 complete. Best val BalAcc so far = 0.9913
+2026-10-27 18:11:29 | INFO    | [iccad3] Pareto front size = 4 / 78 valid candidates
+2026-10-27 18:11:29 | INFO    | [iccad3] Normalized Pareto hypervolume = 0.014757 (reference=[0.0, 0.0])
+2026-10-27 18:11:29 | INFO    | [iccad3] Retraining selected GA architecture: Chromosome(depth=2, filters=16, kernel=5, dense_units=32, dropout=0.3191794557416331, learning_rate=0.006632254784881298)
+2026-10-27 18:16:11 | INFO    | [iccad3] GA-optimized TEST BalAcc=0.9700 params=37233 trained=True
+2026-10-27 18:16:11 | INFO    | [iccad3] Running ablation: highest-validation-Balanced-Accuracy candidate from the NSGA-II pool ...
+2026-10-27 18:21:11 | INFO    | ===== Starting benchmark ICCAD4 =====
+2026-10-27 18:21:15 | WARNING | [iccad4] RESOLUTION CHECK: native images are ~(1200, 1200), configured target is (64, 64) -> downsampling by ~18.8x per axis (~352x fewer pixels). The configured target (64, 64) is being kept as-is (not silently changed).
+2026-10-27 18:21:15 | INFO    | [iccad4] Detected image properties: {'n_inspected': 50, 'unique_sizes': [(1200, 1200)], 'most_common_size': (1200, 1200), 'most_common_mode': 'L', 'pixel_min': 0, 'pixel_max': 255}
+2026-10-27 18:21:31 | INFO    | [iccad4] Class distribution: {'benchmark': 'iccad4', 'train_hs': 95, 'train_nhs': 4452, 'test_hs': 177, 'test_nhs': 31890, 'train_total': 4547, 'test_total': 32067, 'hs_pct_train': 2.089, 'nhs_pct_train': 97.911, 'imbalance_ratio_nhs_per_hs': 46.863}
+2026-10-27 18:34:31 | INFO    | [iccad4] LOADED SAMPLES: train=3637 (HS=76, NHS=3561); validation=910 (HS=19, NHS=891); test=32067 (HS=177, NHS=31890). max_images_per_class=None.
+2026-10-27 18:34:31 | INFO    | [iccad4] Training baseline lightweight CNN ...
+2026-10-27 18:36:38 | INFO    | [iccad4] Baseline TEST BalAcc=0.9012 params=6817 trained=True
+2026-10-27 18:36:38 | INFO    | [iccad4] Training independent hand-designed separable CNN comparator ...
+2026-10-27 18:37:36 | INFO    | [iccad4] Hand-designed CNN TEST BalAcc=0.7802 params=218
+2026-10-27 18:37:37 | INFO    | [iccad4] Running NSGA-II GA search (pop=20, gens=10, search_epochs=5) ...
+2026-10-27 19:01:27 | INFO    |   [iccad4] gen1 cand26: duplicate chromosome -> using cached fitness
+2026-10-27 19:01:27 | INFO    |   [iccad4] gen1 cand27: duplicate chromosome -> using cached fitness
+2026-10-27 19:01:27 | INFO    |   [iccad4] gen1 cand28: duplicate chromosome -> using cached fitness
+2026-10-27 19:16:22 | INFO    |   [iccad4] Generation 1/10 complete. Best val BalAcc so far = 0.9809
+2026-10-27 19:21:18 | INFO    |   [iccad4] gen2 cand49: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand53: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand54: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand55: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand56: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand57: duplicate chromosome -> using cached fitness
+2026-10-27 19:22:53 | INFO    |   [iccad4] gen2 cand58: duplicate chromosome -> using cached fitness
+2026-10-27 19:23:47 | INFO    |   [iccad4] gen2 cand60: duplicate chromosome -> using cached fitness
+2026-10-27 19:23:47 | INFO    |   [iccad4] Generation 2/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:23:47 | INFO    |   [iccad4] gen3 cand61: duplicate chromosome -> using cached fitness
+2026-10-27 19:24:08 | INFO    |   [iccad4] gen3 cand63: duplicate chromosome -> using cached fitness
+2026-10-27 19:24:30 | INFO    |   [iccad4] gen3 cand65: duplicate chromosome -> using cached fitness
+2026-10-27 19:24:30 | INFO    |   [iccad4] gen3 cand66: duplicate chromosome -> using cached fitness
+2026-10-27 19:26:16 | INFO    |   [iccad4] gen3 cand69: duplicate chromosome -> using cached fitness
+2026-10-27 19:26:16 | INFO    |   [iccad4] gen3 cand70: duplicate chromosome -> using cached fitness
+2026-10-27 19:26:16 | INFO    |   [iccad4] gen3 cand71: duplicate chromosome -> using cached fitness
+2026-10-27 19:26:16 | INFO    |   [iccad4] gen3 cand72: duplicate chromosome -> using cached fitness
+2026-10-27 19:27:42 | INFO    |   [iccad4] gen3 cand75: duplicate chromosome -> using cached fitness
+2026-10-27 19:27:42 | INFO    |   [iccad4] gen3 cand76: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen3 cand79: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen3 cand80: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] Generation 3/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen4 cand81: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen4 cand82: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen4 cand83: duplicate chromosome -> using cached fitness
+2026-10-27 19:28:45 | INFO    |   [iccad4] gen4 cand84: duplicate chromosome -> using cached fitness
+2026-10-27 19:29:10 | INFO    |   [iccad4] gen4 cand86: duplicate chromosome -> using cached fitness
+2026-10-27 19:29:10 | INFO    |   [iccad4] gen4 cand87: duplicate chromosome -> using cached fitness
+2026-10-27 19:29:10 | INFO    |   [iccad4] gen4 cand88: duplicate chromosome -> using cached fitness
+2026-10-27 19:30:58 | INFO    |   [iccad4] gen4 cand91: duplicate chromosome -> using cached fitness
+2026-10-27 19:31:35 | INFO    |   [iccad4] gen4 cand93: duplicate chromosome -> using cached fitness
+2026-10-27 19:33:07 | INFO    |   [iccad4] gen4 cand97: duplicate chromosome -> using cached fitness
+2026-10-27 19:33:07 | INFO    |   [iccad4] gen4 cand98: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] Generation 4/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand101: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand102: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand103: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand104: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand105: duplicate chromosome -> using cached fitness
+2026-10-27 19:34:09 | INFO    |   [iccad4] gen5 cand106: duplicate chromosome -> using cached fitness
+2026-10-27 19:38:25 | INFO    |   [iccad4] gen5 cand113: duplicate chromosome -> using cached fitness
+2026-10-27 19:38:25 | INFO    |   [iccad4] gen5 cand114: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen5 cand117: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen5 cand118: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen5 cand119: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen5 cand120: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] Generation 5/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen6 cand121: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen6 cand122: duplicate chromosome -> using cached fitness
+2026-10-27 19:39:39 | INFO    |   [iccad4] gen6 cand123: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand125: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand126: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand127: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand128: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand129: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand130: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand131: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:00 | INFO    |   [iccad4] gen6 cand132: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:55 | INFO    |   [iccad4] gen6 cand135: duplicate chromosome -> using cached fitness
+2026-10-27 19:40:55 | INFO    |   [iccad4] gen6 cand136: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen6 cand139: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen6 cand140: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] Generation 6/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen7 cand141: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen7 cand142: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen7 cand143: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:06 | INFO    |   [iccad4] gen7 cand144: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand147: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand148: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand149: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand150: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand151: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand152: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand153: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand154: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand155: duplicate chromosome -> using cached fitness
+2026-10-27 19:42:45 | INFO    |   [iccad4] gen7 cand156: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen7 cand158: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen7 cand159: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen7 cand160: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] Generation 7/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen8 cand161: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen8 cand162: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:05 | INFO    |   [iccad4] gen8 cand163: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:25 | INFO    |   [iccad4] gen8 cand165: duplicate chromosome -> using cached fitness
+2026-10-27 19:43:25 | INFO    |   [iccad4] gen8 cand166: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:16 | INFO    |   [iccad4] gen8 cand169: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:16 | INFO    |   [iccad4] gen8 cand170: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:16 | INFO    |   [iccad4] gen8 cand171: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:38 | INFO    |   [iccad4] gen8 cand173: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:38 | INFO    |   [iccad4] gen8 cand174: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:38 | INFO    |   [iccad4] gen8 cand175: duplicate chromosome -> using cached fitness
+2026-10-27 19:44:38 | INFO    |   [iccad4] gen8 cand176: duplicate chromosome -> using cached fitness
+2026-10-27 19:45:46 | INFO    |   [iccad4] gen8 cand180: duplicate chromosome -> using cached fitness
+2026-10-27 19:45:46 | INFO    |   [iccad4] Generation 8/10 complete. Best val BalAcc so far = 0.9832
+2026-10-27 19:45:46 | INFO    |   [iccad4] gen9 cand181: duplicate chromosome -> using cached fitness
+2026-10-27 19:45:46 | INFO    |   [iccad4] gen9 cand182: duplicate chromosome -> using cached fitness
+2026-10-27 19:45:46 | INFO    |   [iccad4] gen9 cand183: duplicate chromosome -> using cached fitness
+2026-10-27 19:45:46 | INFO    |   [iccad4] gen9 cand184: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand187: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand188: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand189: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand190: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand191: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand192: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand193: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:31 | INFO    |   [iccad4] gen9 cand194: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen9 cand196: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen9 cand197: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen9 cand198: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen9 cand199: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen9 cand200: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] Generation 9/10 complete. Best val BalAcc so far = 0.9877
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen10 cand201: duplicate chromosome -> using cached fitness
+2026-10-27 19:46:58 | INFO    |   [iccad4] gen10 cand202: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:07 | INFO    |   [iccad4] gen10 cand205: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:07 | INFO    |   [iccad4] gen10 cand206: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:07 | INFO    |   [iccad4] gen10 cand207: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:07 | INFO    |   [iccad4] gen10 cand208: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:57 | INFO    |   [iccad4] gen10 cand211: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:57 | INFO    |   [iccad4] gen10 cand212: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:57 | INFO    |   [iccad4] gen10 cand213: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:57 | INFO    |   [iccad4] gen10 cand214: duplicate chromosome -> using cached fitness
+2026-10-27 19:48:57 | INFO    |   [iccad4] gen10 cand215: duplicate chromosome -> using cached fitness
+2026-10-27 19:49:19 | INFO    |   [iccad4] gen10 cand217: duplicate chromosome -> using cached fitness
+2026-10-27 19:49:19 | INFO    |   [iccad4] gen10 cand218: duplicate chromosome -> using cached fitness
+2026-10-27 19:49:19 | INFO    |   [iccad4] gen10 cand219: duplicate chromosome -> using cached fitness
+2026-10-27 19:49:19 | INFO    |   [iccad4] gen10 cand220: duplicate chromosome -> using cached fitness
+2026-10-27 19:49:19 | INFO    |   [iccad4] Generation 10/10 complete. Best val BalAcc so far = 0.9877
+2026-10-27 19:49:19 | INFO    | [iccad4] Pareto front size = 5 / 97 valid candidates
+2026-10-27 19:49:19 | INFO    | [iccad4] Normalized Pareto hypervolume = 0.043210 (reference=[0.0, 0.0])
+2026-10-27 19:49:19 | INFO    | [iccad4] Retraining selected GA architecture: Chromosome(depth=2, filters=8, kernel=5, dense_units=32, dropout=0.3048770137894006, learning_rate=0.004352988180045961)
+2026-10-27 19:51:17 | INFO    | [iccad4] GA-optimized TEST BalAcc=0.9023 params=10649 trained=True
+2026-10-27 19:51:18 | INFO    | [iccad4] Running ablation: highest-validation-Balanced-Accuracy candidate from the NSGA-II pool ...
+2026-10-27 19:52:47 | INFO    | ===== Starting benchmark ICCAD5 =====
+2026-10-27 19:52:50 | WARNING | [iccad5] RESOLUTION CHECK: native images are ~(1200, 1200), configured target is (64, 64) -> downsampling by ~18.8x per axis (~352x fewer pixels). The configured target (64, 64) is being kept as-is (not silently changed).
+2026-10-27 19:52:50 | INFO    | [iccad5] Detected image properties: {'n_inspected': 50, 'unique_sizes': [(1200, 1200)], 'most_common_size': (1200, 1200), 'most_common_mode': 'L', 'pixel_min': 0, 'pixel_max': 255}
+2026-10-27 19:52:58 | INFO    | [iccad5] Class distribution: {'benchmark': 'iccad5', 'train_hs': 26, 'train_nhs': 2716, 'test_hs': 41, 'test_nhs': 19327, 'train_total': 2742, 'test_total': 19368, 'hs_pct_train': 0.948, 'nhs_pct_train': 99.052, 'imbalance_ratio_nhs_per_hs': 104.462}
+2026-10-27 19:58:27 | INFO    | [iccad5] LOADED SAMPLES: train=2193 (HS=21, NHS=2172); validation=549 (HS=5, NHS=544); test=19368 (HS=41, NHS=19327). max_images_per_class=None.
+2026-10-27 19:58:27 | INFO    | [iccad5] Training baseline lightweight CNN ...
+2026-10-27 20:00:08 | INFO    | [iccad5] Baseline TEST BalAcc=0.8247 params=6817 trained=True
+2026-10-27 20:00:08 | INFO    | [iccad5] Training independent hand-designed separable CNN comparator ...
+2026-10-27 20:00:58 | INFO    | [iccad5] Hand-designed CNN TEST BalAcc=0.6968 params=218
+2026-10-27 20:00:58 | INFO    | [iccad5] Running NSGA-II GA search (pop=20, gens=10, search_epochs=5) ...
+2026-10-27 20:18:36 | INFO    |   [iccad5] gen1 cand25: duplicate chromosome -> using cached fitness
+2026-10-27 20:19:08 | INFO    |   [iccad5] gen1 cand27: duplicate chromosome -> using cached fitness
+2026-10-27 20:19:08 | INFO    |   [iccad5] gen1 cand28: duplicate chromosome -> using cached fitness
+2026-10-27 20:22:29 | INFO    |   [iccad5] gen1 cand33: duplicate chromosome -> using cached fitness
+2026-10-27 20:22:29 | INFO    |   [iccad5] gen1 cand34: duplicate chromosome -> using cached fitness
+2026-10-27 20:29:33 | INFO    |   [iccad5] Generation 1/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:29:33 | INFO    |   [iccad5] gen2 cand41: duplicate chromosome -> using cached fitness
+2026-10-27 20:29:33 | INFO    |   [iccad5] gen2 cand42: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand45: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand46: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand47: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand48: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand49: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand50: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand51: duplicate chromosome -> using cached fitness
+2026-10-27 20:30:28 | INFO    |   [iccad5] gen2 cand52: duplicate chromosome -> using cached fitness
+2026-10-27 20:31:36 | INFO    |   [iccad5] gen2 cand55: duplicate chromosome -> using cached fitness
+2026-10-27 20:31:36 | INFO    |   [iccad5] gen2 cand56: duplicate chromosome -> using cached fitness
+2026-10-27 20:35:16 | INFO    |   [iccad5] Generation 2/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:35:42 | INFO    |   [iccad5] gen3 cand62: duplicate chromosome -> using cached fitness
+2026-10-27 20:35:42 | INFO    |   [iccad5] gen3 cand63: duplicate chromosome -> using cached fitness
+2026-10-27 20:35:42 | INFO    |   [iccad5] gen3 cand64: duplicate chromosome -> using cached fitness
+2026-10-27 20:36:10 | INFO    |   [iccad5] gen3 cand66: duplicate chromosome -> using cached fitness
+2026-10-27 20:36:10 | INFO    |   [iccad5] gen3 cand67: duplicate chromosome -> using cached fitness
+2026-10-27 20:36:10 | INFO    |   [iccad5] gen3 cand68: duplicate chromosome -> using cached fitness
+2026-10-27 20:36:10 | INFO    |   [iccad5] gen3 cand69: duplicate chromosome -> using cached fitness
+2026-10-27 20:36:10 | INFO    |   [iccad5] gen3 cand70: duplicate chromosome -> using cached fitness
+2026-10-27 20:39:45 | INFO    |   [iccad5] gen3 cand74: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen3 cand77: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen3 cand78: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen3 cand79: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen3 cand80: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] Generation 3/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen4 cand81: duplicate chromosome -> using cached fitness
+2026-10-27 20:41:15 | INFO    |   [iccad5] gen4 cand82: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:01 | INFO    |   [iccad5] gen4 cand85: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:01 | INFO    |   [iccad5] gen4 cand86: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:56 | INFO    |   [iccad5] gen4 cand89: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:56 | INFO    |   [iccad5] gen4 cand90: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:56 | INFO    |   [iccad5] gen4 cand91: duplicate chromosome -> using cached fitness
+2026-10-27 20:42:56 | INFO    |   [iccad5] gen4 cand92: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand94: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand95: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand96: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand97: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand98: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand99: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen4 cand100: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] Generation 4/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen5 cand101: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:17 | INFO    |   [iccad5] gen5 cand102: duplicate chromosome -> using cached fitness
+2026-10-27 20:43:45 | INFO    |   [iccad5] gen5 cand104: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand107: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand108: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand109: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand110: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand111: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand112: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand113: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand114: duplicate chromosome -> using cached fitness
+2026-10-27 20:44:37 | INFO    |   [iccad5] gen5 cand115: duplicate chromosome -> using cached fitness
+2026-10-27 20:45:46 | INFO    |   [iccad5] gen5 cand119: duplicate chromosome -> using cached fitness
+2026-10-27 20:46:30 | INFO    |   [iccad5] Generation 5/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:46:30 | INFO    |   [iccad5] gen6 cand121: duplicate chromosome -> using cached fitness
+2026-10-27 20:46:30 | INFO    |   [iccad5] gen6 cand122: duplicate chromosome -> using cached fitness
+2026-10-27 20:47:21 | INFO    |   [iccad5] gen6 cand125: duplicate chromosome -> using cached fitness
+2026-10-27 20:48:21 | INFO    |   [iccad5] gen6 cand128: duplicate chromosome -> using cached fitness
+2026-10-27 20:48:21 | INFO    |   [iccad5] gen6 cand129: duplicate chromosome -> using cached fitness
+2026-10-27 20:48:21 | INFO    |   [iccad5] gen6 cand130: duplicate chromosome -> using cached fitness
+2026-10-27 20:48:21 | INFO    |   [iccad5] gen6 cand131: duplicate chromosome -> using cached fitness
+2026-10-27 20:48:21 | INFO    |   [iccad5] gen6 cand132: duplicate chromosome -> using cached fitness
+2026-10-27 20:49:41 | INFO    |   [iccad5] gen6 cand135: duplicate chromosome -> using cached fitness
+2026-10-27 20:49:41 | INFO    |   [iccad5] gen6 cand136: duplicate chromosome -> using cached fitness
+2026-10-27 20:49:41 | INFO    |   [iccad5] gen6 cand137: duplicate chromosome -> using cached fitness
+2026-10-27 20:49:41 | INFO    |   [iccad5] gen6 cand138: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen6 cand140: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] Generation 6/10 complete. Best val BalAcc so far = 0.9917
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand141: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand142: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand143: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand144: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand145: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand146: duplicate chromosome -> using cached fitness
+2026-10-27 20:50:16 | INFO    |   [iccad5] gen7 cand147: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand149: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand150: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand151: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand152: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand153: duplicate chromosome -> using cached fitness
+2026-10-27 20:51:03 | INFO    |   [iccad5] gen7 cand154: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen7 cand157: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen7 cand158: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen7 cand159: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen7 cand160: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] Generation 7/10 complete. Best val BalAcc so far = 0.9926
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen8 cand161: duplicate chromosome -> using cached fitness
+2026-10-27 20:52:11 | INFO    |   [iccad5] gen8 cand162: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand165: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand166: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand167: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand168: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand169: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand170: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand171: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand172: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand173: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand174: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand175: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:06 | INFO    |   [iccad5] gen8 cand176: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:39 | INFO    |   [iccad5] gen8 cand178: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:39 | INFO    |   [iccad5] gen8 cand179: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:39 | INFO    |   [iccad5] gen8 cand180: duplicate chromosome -> using cached fitness
+2026-10-27 20:53:39 | INFO    |   [iccad5] Generation 8/10 complete. Best val BalAcc so far = 0.9926
+2026-10-27 20:54:09 | INFO    |   [iccad5] gen9 cand182: duplicate chromosome -> using cached fitness
+2026-10-27 20:54:09 | INFO    |   [iccad5] gen9 cand183: duplicate chromosome -> using cached fitness
+2026-10-27 20:54:09 | INFO    |   [iccad5] gen9 cand184: duplicate chromosome -> using cached fitness
+2026-10-27 20:54:09 | INFO    |   [iccad5] gen9 cand185: duplicate chromosome -> using cached fitness
+2026-10-27 20:54:09 | INFO    |   [iccad5] gen9 cand186: duplicate chromosome -> using cached fitness
+2026-10-27 20:55:08 | INFO    |   [iccad5] gen9 cand189: duplicate chromosome -> using cached fitness
+2026-10-27 20:55:08 | INFO    |   [iccad5] gen9 cand190: duplicate chromosome -> using cached fitness
+2026-10-27 20:55:37 | INFO    |   [iccad5] gen9 cand192: duplicate chromosome -> using cached fitness
+2026-10-27 20:56:34 | INFO    |   [iccad5] gen9 cand195: duplicate chromosome -> using cached fitness
+2026-10-27 20:56:34 | INFO    |   [iccad5] gen9 cand196: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen9 cand198: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen9 cand199: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen9 cand200: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] Generation 9/10 complete. Best val BalAcc so far = 0.9926
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand201: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand202: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand203: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand204: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand205: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand206: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand207: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:03 | INFO    |   [iccad5] gen10 cand208: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:30 | INFO    |   [iccad5] gen10 cand210: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:30 | INFO    |   [iccad5] gen10 cand211: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:30 | INFO    |   [iccad5] gen10 cand212: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:30 | INFO    |   [iccad5] gen10 cand213: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:57 | INFO    |   [iccad5] gen10 cand215: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:57 | INFO    |   [iccad5] gen10 cand216: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:57 | INFO    |   [iccad5] gen10 cand217: duplicate chromosome -> using cached fitness
+2026-10-27 20:57:57 | INFO    |   [iccad5] gen10 cand218: duplicate chromosome -> using cached fitness
+2026-10-27 20:58:24 | INFO    |   [iccad5] gen10 cand220: duplicate chromosome -> using cached fitness
+2026-10-27 20:58:24 | INFO    |   [iccad5] Generation 10/10 complete. Best val BalAcc so far = 0.9926
+2026-10-27 20:58:26 | INFO    | [iccad5] Pareto front size = 4 / 85 valid candidates
+2026-10-27 20:58:26 | INFO    | [iccad5] Normalized Pareto hypervolume = 0.012868 (reference=[0.0, 0.0])
+2026-10-27 20:58:26 | INFO    | [iccad5] Retraining selected GA architecture: Chromosome(depth=1, filters=8, kernel=3, dense_units=32, dropout=0.48592691221951595, learning_rate=0.005244080105978418)
+2026-10-27 21:00:52 | INFO    | [iccad5] GA-optimized TEST BalAcc=0.9062 params=13873 trained=True
+2026-10-27 21:00:53 | INFO    | [iccad5] Running ablation: highest-validation-Balanced-Accuracy candidate from the NSGA-II pool ...
+2026-10-27 21:02:08 | INFO    | Excel report written to results_full_oct27_seed11\overall\G13_results.xlsx
+2026-10-27 21:02:09 | INFO    | ===== EXPERIMENT COMPLETE: all five benchmarks succeeded =====
+2026-10-27 21:02:09 | INFO    | Results written under: C:\Users\misha\G13_project\results_full_oct27_seed11
+2026-10-27 21:02:09 | INFO    | 
+                                     Benchmark                         Model  Accuracy  Balanced Accuracy  Precision  Recall/Sensitivity  Specificity  F1-score  Fixed-0.5 Accuracy  Fixed-0.5 Balanced Accuracy  Fixed-0.5 Precision  Fixed-0.5 Recall/Sensitivity  Fixed-0.5 Specificity  Fixed-0.5 F1-score   TP   TN   FP   FN  Parameters  Trainable Parameters  Estimated MACs (Conv/Dense only)  Estimated FLOPs (2x MACs)                                                                                                                                      Complexity Measurement Note  Inference Time (ms)
+MEAN (benchmark-level average across ICCAD1-5)                      Baseline  0.929665           0.895684   0.308354            0.863810     0.927558  0.422787            0.932322                     0.811761             0.378328                      0.692570               0.930951            0.449135 None None None None      6865.0                6817.0                        11249820.0                 22499640.0 Unweighted mean of benchmark-level estimates; Conv2D/Dense MACs only; FLOPs = 2 x MACs; excludes BatchNorm, pooling, activations, bias adds and memory movement.             6.492716
+MEAN (benchmark-level average across ICCAD1-5)                            GA  0.935343           0.909248   0.271597            0.883975     0.934522  0.381042            0.973708                     0.865746             0.418077                      0.753222               0.978271            0.466307 None None None None     14090.6               14052.2                        16883043.2                 33766086.4 Unweighted mean of benchmark-level estimates; Conv2D/Dense MACs only; FLOPs = 2 x MACs; excludes BatchNorm, pooling, activations, bias adds and memory movement.             5.560573
+MEAN (benchmark-level average across ICCAD1-5) Hand-designed lightweight CNN  0.689730           0.697712   0.054731            0.713934     0.681491  0.097866            0.934183                     0.607321             0.050403                      0.268337               0.946305            0.083748 None None None None       218.0                 218.0                              12.0                       24.0 Unweighted mean of benchmark-level estimates; Conv2D/Dense MACs only; FLOPs = 2 x MACs; excludes BatchNorm, pooling, activations, bias adds and memory movement.             4.856278

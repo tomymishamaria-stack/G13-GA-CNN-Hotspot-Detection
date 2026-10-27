@@ -1,0 +1,91 @@
+{
+  "data_root": "C:\\Users\\misha\\OneDrive\\Desktop\\ICCAD12_Dataset\\iccad-official",
+  "output_dir": "results_full_oct27_seed11",
+  "seed": 11,
+  "image_size": [
+    64,
+    64
+  ],
+  "grayscale": true,
+  "val_ratio": 0.2,
+  "baseline_epochs": 20,
+  "baseline_batch_size": 32,
+  "baseline_lr": 0.002,
+  "early_stopping_patience": 5,
+  "mode": "full",
+  "population_size": 20,
+  "generations": 10,
+  "search_epochs": 5,
+  "crossover_prob": 0.7,
+  "mutation_prob": 0.3,
+  "ga_batch_size": 32,
+  "final_epochs": 20,
+  "n_objectives": 2,
+  "max_images_per_class": null,
+  "inference_timing_repeats": 100,
+  "overwrite": false,
+  "resolved_output_dir": "results_full_oct27_seed11",
+  "timestamp": "2026-10-27T13:19:23",
+  "dataset_path": "C:\\Users\\misha\\OneDrive\\Desktop\\ICCAD12_Dataset\\iccad-official",
+  "python_version": "3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)]",
+  "tensorflow_version": "2.15.0",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
+  "candidate_gene_space": {
+    "depth": [
+      1,
+      2,
+      3
+    ],
+    "filters": [
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "kernel": [
+      3,
+      5
+    ],
+    "dense_units": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "dropout_range": [
+      0.1,
+      0.5
+    ],
+    "learning_rate_range": [
+      0.0001,
+      0.01
+    ]
+  },
+  "ga_operators_documentation": "SEARCH SPACE AND OPERATORS\n--------------------------\nGenes: depth {1,2,3}; filters {8,12,16,24,32}; kernel {3,5};\n       dense units {8,16,32,64}; dropout [0.1,0.5]; learning rate [1e-4,1e-2].\nAlgorithm: NSGA-II, two objectives (maximize validation balanced accuracy at\nfixed threshold 0.5; minimize trainable parameter count).\nSelection: NSGA-II non-dominated sorting and crowding-distance selection.\nVariation: DEAP varAnd with simulated-binary bounded crossover\n(cxSimulatedBinaryBounded, eta=15) and polynomial bounded mutation\n(mutPolynomialBounded, eta=20, per-gene probability 1/6); crossover\nprobability 0.7 and mutation probability 0.3 by default.\nThe final selected model's decision threshold is separately selected on validation\ndata only and then frozen for test evaluation.",
+  "full_mode_default_search_budget": {
+    "population": 24,
+    "generations": 12,
+    "search_epochs": 8
+  },
+  "comparison_models": [
+    "reference baseline CNN",
+    "independent hand-designed separable lightweight CNN",
+    "NSGA-II GA CNN"
+  ],
+  "repeated_runs_protocol": "Repeat full experiments with distinct --seed values (e.g. 11, 22, 33, 44, 55); aggregate mean and standard deviation across completed runs. This script records seed in experiment_config.json; do not claim repeated-run statistics from a single seed.",
+  "hypervolume_method": "Per-benchmark normalized 2-D hypervolume; maximize (balanced accuracy, normalized parameter efficiency), reference point (0,0); see each benchmark pareto_hypervolume.json.",
+  "ga_objectives": [
+    "MAXIMIZE validation Balanced Accuracy",
+    "MINIMIZE trainable parameter count"
+  ],
+  "performance_claim_guardrail": "The code cannot guarantee GA test balanced accuracy exceeds baseline. Report actual held-out test outcomes honestly; do not select models based on test results.",
+  "final_pareto_candidate_selection": "Select the Pareto candidate with the highest validation Balanced Accuracy for final retraining; also report lower-complexity trade-off points separately.",
+  "ga_fitness_threshold": "Each GA candidate threshold is selected on validation data to maximize validation Balanced Accuracy; fitness is that validation Balanced Accuracy. The official test set is not used for selection.",
+  "threshold_selection": "For final baseline, selected GA model, and ablation model, select threshold by maximizing validation Balanced Accuracy only; freeze it before test evaluation. Test metrics are also reported at fixed threshold 0.5.",
+  "test_set_caveat": "Test labels are not used for selection within a run. The developer has examined results from earlier pilot runs, so project-wide test-set blindness cannot be claimed; final claims should ideally use an untouched holdout.",
+  "subset_policy": "When max_images_per_class is set, deterministic random sampling is applied to every class folder, including test. Such test results are explicitly subset-only and exploratory.",
+  "pareto_selection_rule_summary": "NSGA-II maximizes validation Balanced Accuracy and minimizes trainable parameters. The final reported GA model is retrained from the Pareto candidate with the highest validation Balanced Accuracy. Lowest-complexity and performance-constrained tradeoff points are also retained in selected_operating_points.csv for comparison. The classification threshold is selected on validation probabilities only and then frozen for the one-time official-test evaluation. No test data are used for selection.",
+  "final_training_protocol": "Final GA model and baseline are both trained on the 80% official-train split ONLY; the 20% validation split is used purely for early-stopping monitoring and is never merged into training data. The official test set is used exclusively for one-time final evaluation, after architecture selection is complete."
+}
